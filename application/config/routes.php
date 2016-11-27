@@ -46,6 +46,7 @@ $route['uploadify_v3'] = 'uploadify_v3';
 
 // admin
 $route['admin/file_list'] = 'file_list';
+$route['admin/admin_calls'] = 'admin_calls';
 
 $route['admin'] = 'admin';
 $route['admin/ajax_login'] = 'admin/ajax_login';

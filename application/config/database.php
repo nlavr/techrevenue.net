@@ -48,22 +48,39 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '127.0.0.1';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'trackdrive';
-$db['default']['dbdriver'] = 'mysqli';
-$db['default']['dbprefix'] = 'gsg_';
-$db['default']['pconnect'] = TRUE;
-$db['default']['db_debug'] = TRUE;
-$db['default']['cache_on'] = FALSE;
-$db['default']['cachedir'] = '';
-$db['default']['char_set'] = 'utf8';
-$db['default']['dbcollat'] = 'utf8_general_ci';
-$db['default']['swap_pre'] = '';
-$db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = FALSE;
-
+if (preg_match('/dev/',$_SERVER['HTTP_HOST'])) {
+    $db['default']['hostname'] = '127.0.0.1';
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = '';
+    $db['default']['database'] = 'trackdrive';
+    $db['default']['dbdriver'] = 'mysqli';
+    $db['default']['dbprefix'] = 'gsg_';
+    $db['default']['pconnect'] = TRUE;
+    $db['default']['db_debug'] = TRUE;
+    $db['default']['cache_on'] = FALSE;
+    $db['default']['cachedir'] = '';
+    $db['default']['char_set'] = 'utf8';
+    $db['default']['dbcollat'] = 'utf8_general_ci';
+    $db['default']['swap_pre'] = '';
+    $db['default']['autoinit'] = TRUE;
+    $db['default']['stricton'] = FALSE;
+} else {
+    $db['default']['hostname'] = '45.79.129.234';
+    $db['default']['username'] = 'nikita';
+    $db['default']['password'] = 'uratyqydu';
+    $db['default']['database'] = 'zadmin_techrevenue';
+    $db['default']['dbdriver'] = 'mysqli';
+    $db['default']['dbprefix'] = 'gsg_';
+    $db['default']['pconnect'] = TRUE;
+    $db['default']['db_debug'] = TRUE;
+    $db['default']['cache_on'] = FALSE;
+    $db['default']['cachedir'] = '';
+    $db['default']['char_set'] = 'utf8';
+    $db['default']['dbcollat'] = 'utf8_general_ci';
+    $db['default']['swap_pre'] = '';
+    $db['default']['autoinit'] = TRUE;
+    $db['default']['stricton'] = FALSE;
+}
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

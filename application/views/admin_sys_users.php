@@ -70,9 +70,13 @@ if ($this->session->flashdata('alert') !== FALSE) {
 				<td><label for="password"><?php echo __('Password') ?></label><?php if ($user->temporary == 'Y') echo '*' ?></td>
 				<td><input type="password" name="password" id="password" autocomplete="off" class="width-200 main_input" /></td>
 			</tr>
-                        <tr>
+            <tr>
 				<td><label for="traffic_source"><?php echo __('Traffic Source') ?>*</label></td>
 				<td><input type="text" name="traffic_source" id="traffic_source" value="<?php if (isset($user->traffic_source)) echo outH($user->traffic_source) ?>" class="width-350 main_input" /></td>
+			</tr>
+			<tr>
+				<td><label for="company_subdomain"><?php echo __('Company Subdomain') ?>*</label></td>
+				<td><input type="text" name="company_subdomain" id="company_subdomain" value="<?php if (isset($user->company_subdomain)) echo outH($user->company_subdomain) ?>" class="width-350 main_input" /></td>
 			</tr>
 			<tr>
 				<td><label for="sys_lang"><?php echo __('Adm. language') ?></label>:</td>

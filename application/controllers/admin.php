@@ -83,9 +83,13 @@ class Admin extends MX_Controller {
 	
 	public function home()
 	{
+		
+		$user_data = $this->session->userdata('admin_user');
+		
 		$data = array(
-			'user_data' => $this->session->userdata('admin_user')
+			'user_data' => $user_data
 		);
+		
 		// meta
 		$meta = array(
 			'title' => implode(' - ', array_reverse($this->gclass->title_array)),
@@ -94,11 +98,13 @@ class Admin extends MX_Controller {
 			'css' => $this->gclass->css_array,
 			'js' => $this->gclass->js_array
 		);
+		
+		$this->gclass->addJs('/js/admin/jquery.ui.datepicker-'. $this->session->userdata('admin_user')->sys_lang.'.js');
+		
 		$this->load->view('header', $meta);
 		$this->load->view('admin_home', $data);
 		$this->load->view('footer');
 	}
-	
 	// login
 	public function ajax_login()
 	{

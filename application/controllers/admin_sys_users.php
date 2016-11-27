@@ -99,7 +99,8 @@ class Admin_sys_users extends MX_Controller {
 					'name_surname' => $_POST['name_surname'],
 					'email' => $_POST['email'],
 					'access' => $access,
-                                        'traffic_source' => $_POST['traffic_source'],
+                    'traffic_source' => $_POST['traffic_source'],
+                    'company_subdomain' => $_POST['company_subdomain'],
 					'sys_lang' => $_POST['sys_lang']
 				);
 				if (isset($_POST['type']) && $_POST['type'] != '') $params['type'] = $_POST['type'];

@@ -113,7 +113,8 @@ class Sys_users extends CI_Model {
 					`name_surname` = ?,
 					`email` = ?,
 					`access` = ?,
-                                        `traffic_source` = ?,
+                    `traffic_source` = ?,
+                    `company_subdomain` = ?,
 					`sys_lang` = ?
 					'.(isset($par['type']) ? ',`type` = ?': '').'
 					'.(isset($par['password']) ? ',`password` = MD5(?)': '').'
@@ -123,7 +124,8 @@ class Sys_users extends CI_Model {
 			$par['name_surname'],
 			$par['email'],
 			$par['access'],
-                        $par['traffic_source'],
+            $par['traffic_source'],
+            $par['company_subdomain'],
 			$par['sys_lang']
 		);
 		if (isset($par['type'])) $params['type'] = $par['type'];
