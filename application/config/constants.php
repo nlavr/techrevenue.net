@@ -5,7 +5,7 @@ $tmp = array(
             );
 define('ARB_LANGUAGES', serialize($tmp));
 
-define('ALL_MODULES', 'sys_users,translations,admin_calls');
+define('ALL_MODULES', 'sys_users,translations,admin_calls,links');
 //define('ALL_MODULES', 'structure,categories,posters,news,news1,pagination,simple,banners,gallery,options_values,users,file_manager,settings,sys_users,translations');
 
 define('ALL_DIRECTORIES', 'photo,video,banners,gallery,upload,projects,documents');
@@ -22,6 +22,7 @@ define('PHOTO_DIR', FILES_DIR.'photo/');
 define('VIDEO_DIR', FILES_DIR.'video/');
 define('PROJETS_DIR', FILES_DIR.'projects/');
 define('DOCUMENTS_DIR', FILES_DIR.'documents/');
+define('TRACKDRIVE_API', 'VCyoexYsLxsDW3sezB_D');
 
 
 /*

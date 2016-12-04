@@ -48,6 +48,12 @@ $route['uploadify_v3'] = 'uploadify_v3';
 $route['admin/file_list'] = 'file_list';
 $route['admin/admin_calls'] = 'admin_calls';
 
+$route['admin/links/(:num)'] = 'admin_links/index/$1';
+$route['admin/links/add'] = 'admin_links/index/0';
+$route['admin/links/position'] = 'admin_links/position';
+$route['admin/links/(:any)/(:num)'] = 'admin_links/$1/$2';
+$route['admin/links'] = 'admin_links';
+
 $route['admin'] = 'admin';
 $route['admin/ajax_login'] = 'admin/ajax_login';
 $route['admin/logout'] = 'admin/logout';

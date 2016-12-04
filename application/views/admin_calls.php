@@ -4,7 +4,7 @@
 			border:1px solid black;
 			font-weight:bold;
 			border-collapse: collapse;
-			background-color:#e34c24;
+			background-color:#c39200;
 			color:white;
 			font-size:20px;
 			text-align:center;
@@ -20,15 +20,27 @@
 	<form id="form1" action="<?php echo base_url('admin/admin_calls') ?>" method="post" onsubmit="return checkEntries();">
 		<table id="diplay_table" >
 			<tr>
+                                <th><?php echo __('Nummber');?></th>
 				<th><?php echo __('Total In progress');?></th>
 				<th><?php echo __('Total Converted');?></th>
 				<th><?php echo __('Total Calls');?></th>
 			</tr>
+                        
+                        <?php if(!empty($data['nummbers'])) { foreach($data['nummbers'] as $item) { ?>
+                            <tr>
+                                <td><?php echo $item['title'] ?></td>
+                                <td><?php echo $item['in_progress']?></td>
+                                <td><?php echo $item['converted']?></td>
+                                <td><?php echo $item['all']?></td>
+                            </tr>
+                        <?php }}  ?>
+                            
+                            
 			<tr>
-			<tr>
-				<td><?php echo $data['in_progress']?></td>
-				<td><?php echo $data['converted']?></td>
-				<td><?php echo $data['all']?></td>
+                            <td></td>
+                            <td><?php echo $data['in_progress']?></td>
+                            <td><?php echo $data['converted']?></td>
+                            <td><?php echo $data['all']?></td>
 			</tr>
 		</table>
 		<table class="form-tab width-650">

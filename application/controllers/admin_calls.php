@@ -28,35 +28,35 @@ class Admin_calls extends MX_Controller {
 		
 		if(!empty($user_data->company_subdomain) && !empty($user_data->traffic_source)) {
 			
-			$api_key ='VCyoexYsLxsDW3sezB_D';
-			$url = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/calls.json?auth_token='.$api_key.'&traffic_source_id='.$user_data->traffic_source.'&per_page=1';
+			$url = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/calls.json?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$user_data->traffic_source.'&per_page=1';
 			
 			
 			//from date
 			if(isset($_POST['created_at_from'])) {
-				$url .= '&created_at_from='.$_POST['created_at_from'];
+				$url .= '&created_at_from='.$_POST['created_at_from'].'+00%3A00%3A00%20-0500';
 			} else {
 				$date = strtotime ( '-0 day' , strtotime ( date('Y-m-d') ) ) ;
 				$date = date ( 'Y-m-j' , $date );
-				$url .= '&created_at_from='.$date;
+				$url .= '&created_at_from='.$date.'+00%3A00%3A00%20-0500';
 			}
 			
 			//to date
 			if(isset($_POST['created_at_to'])) {
-				$url .= 'created_at_to='.$_POST['created_at_to'];
+				$url .= '&created_at_to='.$_POST['created_at_to'].'+23%3A59%3A59%20-0500';
 			} else {
 				$date = strtotime ( '-0 day' , strtotime ( date('Y-m-d') ) ) ;
 				$date = date ( 'Y-m-j' , $date );
-				$url .= 'created_at_to='.$date;
+				$url .= '&created_at_to='.$date.'+23%3A59%3A59%20-0500';;
 			}
 			
 			
 			//add data
 			$data['all'] = $this->getTrackDriveData($url);
-			$data['converted'] = $this->getTrackDriveData($url."&buyer_converted=true");
+			$data['converted'] = $this->getTrackDriveData($url."&offer_converted=true");
 			$data['in_progress'] = $this->getTrackDriveData($url."&in_progress=true");
+                        $data['nummbers'] = $this->getNumbersData($user_data->traffic_source, $_POST);
+                        
 		}
-		
 		$data = array(
 			'user_data' => $user_data,
 			'data' => $data
@@ -87,6 +87,49 @@ class Admin_calls extends MX_Controller {
 		$return = !empty($data) ? $data->metadata->total_count : 0;
 		return $return;
 	}
-	
+        public function getNumbersData($id, $filters) {
+            $user_data = $this->session->userdata('admin_user');
+            $url = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/phone_numbers?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$id.'&per_page=1';
+            
+            $data = file_get_contents($url);
+            $data = json_decode($data);
+            
+            if(isset($data->numbers) && !empty($data->numbers)) {
+                
+                $nummbers = array();
+                foreach($data->numbers as $item) {
+                    
+                    $numberUrl = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/calls.json?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$user_data->traffic_source.'&per_page=1';
+
+                    //from date
+                    if(isset($filters['created_at_from'])) {
+                            $numberUrl .= '&created_at_from='.$filters['created_at_from'].'+00%3A00%3A00%20-0500';
+                    } else {
+                            $date = strtotime ( '-0 day' , strtotime ( date('Y-m-d') ) ) ;
+                            $date = date ( 'Y-m-j' , $date );
+                            $numberUrl .= '&created_at_from='.$date.'+00%3A00%3A00%20-0500';
+                    }
+
+                    //to date
+                    if(isset($filters['created_at_to'])) {
+                            $numberUrl .= '&created_at_to='.$filters['created_at_to'].'+23%3A59%3A59%20-0500';
+                    } else {
+                            $date = strtotime ( '-0 day' , strtotime ( date('Y-m-d') ) ) ;
+                            $date = date ( 'Y-m-j' , $date );
+                            $numberUrl .= '&created_at_to='.$date.'+23%3A59%3A59%20-0500';;
+                    }
+                    
+                    $nummbers[] = array(
+                        'title' =>  $item->number,
+                        'all' =>  $this->getTrackDriveData($numberUrl."&number_id=".$item->id),
+                        'converted' =>  $this->getTrackDriveData($numberUrl."&offer_converted=true"."&number_id=".$item->id),
+                        'in_progress' =>  $this->getTrackDriveData($numberUrl."&in_progress=true"."&number_id=".$item->id)
+                    );
+                }
+                return $nummbers;
+            }
+            
+            return array();
+        }
 	
 }

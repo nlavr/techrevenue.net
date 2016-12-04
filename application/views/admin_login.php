@@ -34,7 +34,7 @@
 	}
 	#login_main .line {
 		height: 58px;
-		background: #e34c24 url('/images/admin/r_bg.png') no-repeat center 7px;
+		background: #c39200 url('/images/admin/r_bg.png') no-repeat center 7px;
 		color: #fff;
 		text-align: center;
 		font-size: 11px;
@@ -48,7 +48,7 @@
 		display: block;
 		width: 290px;
 		height: 220px;
-		background-color: #e34c24;
+		background-color: #c39200;
 		margin: 35px auto 0 auto;
 		-moz-border-radius: 5px;
 		border-radius: 5px;

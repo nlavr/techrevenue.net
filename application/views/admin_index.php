@@ -10,6 +10,7 @@
 </script>
 
 <div id="main_header">
+    <img src="/images/admin/logo.png" id="logo"/>
     <?php if(!empty($this->session->userdata('admin_user')->access)) { ?>
 	<div id="menu_toggle"><img  src="/images/admin/menu_icon.png" /></div>
     <?php } ?>

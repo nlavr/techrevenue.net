@@ -146,7 +146,7 @@ button.blown:hover {
 
 #main_header {
 	height: 58px;
-	background-color: #e34c24;
+	background-color: #c39200;
 	position: relative;
 	width: 100%;
 	z-index: 2;
@@ -183,10 +183,10 @@ button.blown:hover {
 	font-size: 14px;
 }
 #main_left .content li a:hover {
-	background-color: #E34C24;
+	background-color: #c39200;
 }
 #main_left .content li a.active {
-	background-color: #E34C24;
+	background-color: #c39200;
 }
 #main_right {
 	margin: 10px 20px 0 280px;
@@ -226,7 +226,7 @@ button.blown:hover {
 }
 #user_toggle ul li a {
 	display: block;
-	background-color: #e34c24;
+	background-color: #c39200;
 	padding: 5px;
 	text-decoration:none;
 	color:white;
@@ -248,7 +248,7 @@ button.blown:hover {
 	
 }
 #tab_holder div.active {
-	background-color: #E34C24;
+	background-color: #c39200;
 	color:white;
 }
 .iframe {
@@ -309,7 +309,7 @@ button.blown:hover {
 }
 #client_logo a {
 	text-decoration:none;
-	color:#e34c24;
+	color:#c39200;
 	font-size:14px;
 	margin-bottom:15px;
 	display: block
@@ -341,7 +341,7 @@ button.blown:hover {
 	margin:20px 0px;
 }
 .orange_table th {
-	background-color: #e34c24;
+	background-color: #c39200;
 	font-size: 14px;
 	font-weight: bold;
 	color: white;
@@ -487,5 +487,12 @@ textarea#translation {
 #data_tab tr td a {
 	text-decoration: none;
 	color: #333;
+}
+.links-url {
+    color:#c39200!important;
+    margin-right: 15px;
+}
+.links-url:hover {
+    text-decoration: underline!important;
 }
 /* AMDIN ELEMTNS END */

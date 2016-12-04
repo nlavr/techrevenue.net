@@ -6,7 +6,7 @@
 			border:1px solid black;
 			font-weight:bold;
 			border-collapse: collapse;
-			background-color:#e34c24;
+			background-color:#c39200;
 			color:white;
 			font-size:20px;
 			text-align:center;
