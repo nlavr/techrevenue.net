@@ -87,10 +87,11 @@ class Admin_calls extends MX_Controller {
 		$return = !empty($data) ? $data->metadata->total_count : 0;
 		return $return;
 	}
+        
         public function getNumbersData($id, $filters) {
             $user_data = $this->session->userdata('admin_user');
-            $url = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/phone_numbers?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$id.'&per_page=1';
-            
+            $url = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/phone_numbers?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$id;
+
             $data = file_get_contents($url);
             $data = json_decode($data);
             
@@ -101,7 +102,7 @@ class Admin_calls extends MX_Controller {
                     
                     $numberUrl = 'https://'.$user_data->company_subdomain.'.trackdrive.net/api/v1/calls.json?auth_token='.TRACKDRIVE_API.'&traffic_source_id='.$user_data->traffic_source.'&per_page=1';
 
-                    //from date
+                    //from dates
                     if(isset($filters['created_at_from'])) {
                             $numberUrl .= '&created_at_from='.$filters['created_at_from'].'+00%3A00%3A00%20-0500';
                     } else {

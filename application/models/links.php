@@ -76,5 +76,17 @@ class Links extends CI_Model {
 							`temporary` = "Y"';
         $this->db->query($sql);
     }
+    
+    function getLanding() {
+            $sql = 'SELECT
+                            *
+                    FROM
+                            `' . $this->db->dbprefix($this->links_tab) . '`
+                    WHERE
+                            `deleted` = "N"
+                            AND `id` = 41';
+            $query = $this->db->query($sql, array());
+            return $query->row();
+    }
 
 }

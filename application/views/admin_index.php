@@ -12,10 +12,10 @@
 <div id="main_header">
     <img src="/images/admin/logo.png" id="logo"/>
     <?php if(!empty($this->session->userdata('admin_user')->access)) { ?>
-	<div id="menu_toggle"><img  src="/images/admin/menu_icon.png" /></div>
+	<div id="menu_toggle"><i class="fa fa-bars"></i></div>
     <?php } ?>
 	<div id="user_toggle">
-		<div><?php echo $this->session->userdata('admin_user')->name_surname; ?> <img src="/images/admin/top_arrow.png"></div>
+		<div><?php echo $this->session->userdata('admin_user')->name_surname; ?> <i class="fa fa-caret-down" aria-hidden="true"></i></div>
 		<ul>
 			<li><a href="/admin/logout">exit</a></li>
 		</ul>

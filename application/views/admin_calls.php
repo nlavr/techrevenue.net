@@ -4,7 +4,7 @@
 			border:1px solid black;
 			font-weight:bold;
 			border-collapse: collapse;
-			background-color:#c39200;
+			background-color:#4d4d4d;
 			color:white;
 			font-size:20px;
 			text-align:center;

@@ -6,7 +6,7 @@
 			border:1px solid black;
 			font-weight:bold;
 			border-collapse: collapse;
-			background-color:#c39200;
+			background-color:#4d4d4d;
 			color:white;
 			font-size:20px;
 			text-align:center;
@@ -93,12 +93,8 @@
 				<td class="c2"><?php echo $user_data->name_surname; ?></td>
 			</tr>
 			<tr>
-				<td class="c1"><?php echo __('E-mail'); ?></td>
-				<td class="c2"><?php echo $user_data->email; ?></td>
-			</tr>
-			<tr>
 				<td class="c1"><?php echo __('Type'); ?></td>
-				<td class="c2"><?php echo $user_data->type; ?></td>
+				<td class="c2"><?php echo $user_data->type == 'user' ? "publisher" : $user_data->type; ?></td>
 			</tr>
 			<tr>
 				<td class="c1"><?php echo __('Last login'); ?></td>

@@ -44,6 +44,9 @@ $route['default_controller'] = 'admin';
 $route['image'] = 'admin_posters/image';
 $route['uploadify_v3'] = 'uploadify_v3';
 
+//api
+$route['getLink/(:any)'] = 'links_api/index/$1';
+
 // admin
 $route['admin/file_list'] = 'file_list';
 $route['admin/admin_calls'] = 'admin_calls';

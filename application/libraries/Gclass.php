@@ -36,6 +36,7 @@ class Gclass {
                         '/css/reset.css',
                         //'http://fonts.googleapis.com/css?family=Muli:400,400italic',
                         '/js/fancybox/source/jquery.fancybox.css?v=2.1.5',
+                        '/css/font-awesome.min.css',
                         '/css/admin/style.css'
                 );
                 $this->js_array = array(
@@ -55,6 +56,7 @@ class Gclass {
                 $this->css_array = array(
                         'http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css',
                         '/css/reset.css',
+                        '/css/font-awesome.min.css',
                         //'http://fonts.googleapis.com/css?family=Muli:400,400italic',
                         '/js/fancybox/source/jquery.fancybox.css?v=2.1.5',
                         '/css/admin/style.css'

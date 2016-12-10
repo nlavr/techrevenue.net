@@ -138,20 +138,21 @@ textarea {
 	padding: 0 15px;
 }
 button.blown {
-	background-color: #7b2711;
+	background-color: #FDBE2D;
 }
 button.blown:hover {
-	background-color: #892f18;
+	background-color: #c39200;
 }
 
 #main_header {
 	height: 58px;
-	background-color: #c39200;
+	background-color: white;
 	position: relative;
 	width: 100%;
 	z-index: 2;
 	min-width: 1024px;
-	color: white;
+	color: #4d4d4d;
+        border-bottom:1px solid #4d4d4d;
 }
 #menu_toggle {
 	cursor: pointer;
@@ -183,10 +184,10 @@ button.blown:hover {
 	font-size: 14px;
 }
 #main_left .content li a:hover {
-	background-color: #c39200;
+	background-color: #4d4d4d;
 }
 #main_left .content li a.active {
-	background-color: #c39200;
+	background-color: #4d4d4d;
 }
 #main_right {
 	margin: 10px 20px 0 280px;
@@ -205,7 +206,8 @@ button.blown:hover {
 
 #menu_toggle {
 	float: left;
-	margin: 20px 0 0 225px;
+	margin: 20px 0 0 80px;
+        font-size: 20px;
 }
 #user_toggle {
 	float: right;
@@ -226,7 +228,7 @@ button.blown:hover {
 }
 #user_toggle ul li a {
 	display: block;
-	background-color: #c39200;
+	background-color: #4d4d4d;
 	padding: 5px;
 	text-decoration:none;
 	color:white;
@@ -234,7 +236,6 @@ button.blown:hover {
 
 #tab_holder {
 	min-height: 50px;
-	border-bottom: solid 1px #C8C8C8; 
 	padding-bottom:10px;
 }
 #tab_holder div {
@@ -248,7 +249,7 @@ button.blown:hover {
 	
 }
 #tab_holder div.active {
-	background-color: #c39200;
+	background-color: #4d4d4d;
 	color:white;
 }
 .iframe {
@@ -309,7 +310,7 @@ button.blown:hover {
 }
 #client_logo a {
 	text-decoration:none;
-	color:#c39200;
+	color:#4d4d4d;
 	font-size:14px;
 	margin-bottom:15px;
 	display: block
@@ -341,20 +342,20 @@ button.blown:hover {
 	margin:20px 0px;
 }
 .orange_table th {
-	background-color: #c39200;
+	background-color: #4d4d4d;
 	font-size: 14px;
 	font-weight: bold;
 	color: white;
 	padding: 10px 15px;
-	border-left: 1px solid #d04722;
-	border-right: 1px solid #d04722;
+	border-left: 1px solid #4d4d4d;
+	border-right: 1px solid #4d4d4d;
 }
 .orange_table tr {
 	border-bottom: 1px solid #dcdcdc;
 }
 .orange_table td {
-	border-left: 1px solid #d04722;
-	border-right: 1px solid #d04722;
+	border-left: 1px solid #4d4d4d;
+	border-right: 1px solid #4d4d4d;
 	padding: 10px 15px;
 	font-size: 14px;
 	color: #3b3b3b;
@@ -394,7 +395,7 @@ button.blown:hover {
 	background-color: #c30b0b;
 }
 .orange_btn {
-	background-color: #d87000;
+	background-color: #FDBE2D;
 }
 .silver_btn {
 	background-color: #8f8f8f;
@@ -489,10 +490,13 @@ textarea#translation {
 	color: #333;
 }
 .links-url {
-    color:#c39200!important;
+    color:#4d4d4d!important;
     margin-right: 15px;
 }
 .links-url:hover {
     text-decoration: underline!important;
 }
 /* AMDIN ELEMTNS END */
+#info_block {
+    color:white;
+}
